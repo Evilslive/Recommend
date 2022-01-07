@@ -49,6 +49,7 @@ base['tags'] = shop # 將 shop:list 建為欄'tags'
 &nbsp;
 ### *Longest common Subsequence with DP*
 最長共同序列問題, 除了取出最長共有子序外, 也要提供子序最後結束的位置(作為事件切分點)
+用這個演篹法找出彼此間的共有消費模式
 
 ```python
 def lcs(m:list, n:list):
