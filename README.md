@@ -12,7 +12,9 @@
 
 
 ### Pandas 操作
+
 > *.read_csv* &emsp; 讀取gzip壓縮檔
+
 ```python
 df = pd.read_csv(url, 
                  compression='gzip',
@@ -21,18 +23,24 @@ df = pd.read_csv(url,
                  skiprows=[], # 跳過多少行
                  nrows=100) # 讀取多少行
 ```
+
 > *.crosstab* &emsp; 產生資料交叉表
+
 ```python
 table = pd.crosstab(df.chid, # 縱列 index
                     df.shop_tag, # 橫欄 column
                     aggfunc=np.mean, # 計算公式
                     values=df.txn_amt) # cell內的值
 ```
+
 > *.drop* &emsp; Drop specified labels from rows or columns.
+
 ```python
 table = table.drop(columns=100) # 排除欄
 ```
+
 > *.DataFrame* &emsp; Two-dimensional, size-mutable, potentially heterogeneous tabular data.
+
 ```python
 base = pd.DataFrame() # 產生 空 資料框架
 base['chid'] = table.index # 將table的index建為欄'chid'
@@ -41,6 +49,7 @@ base['tags'] = shop # 將 shop:list 建為欄'tags'
 &nbsp;
 ### *Longest common Subsequence with DP*
 最長共同序列問題, 除了取出最長共有子序外, 也要提供子序最後結束的位置(作為事件切分點)
+
 ```python
 def lcs(m:list, n:list):
     ''' 動態規劃 '''
