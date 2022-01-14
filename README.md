@@ -74,7 +74,9 @@ def lcs(m:list, n:list):
     if result == [[]]: return [[]], [[]] # 沒找到
     return [tuple(m[j[0]-1] for j in i) for i in result], \
            [(max([j[0] for j in i]), max([j[1] for j in i])) for i in result] # 結束點cut point
-           
+```
+
+```python
 def upstream(matrix:list, m:int=None, n:int=None, cache:list=[[]])->list:
     ''' cache: [[(m1,n1), (m2, m2)]]
         希望可以岔路遍歷, 雖然都是最長共子序, 但特徵可能有不同的意義
